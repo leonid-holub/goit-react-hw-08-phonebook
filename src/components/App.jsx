@@ -1,35 +1,22 @@
-import { useSelector, useDispatch } from 'react-redux';
-import { useEffect } from 'react';
-import { fetchContacts } from 'redux/operations';
-import { selectIsLoading, selectError } from 'redux/selectors';
-import Section from './Section/Section';
-import Form from './Form/Form';
-import Contacts from './Contacts/Contacs';
+import { Route, Routes, Navigate } from 'react-router-dom';
+import { lazy, Suspense } from 'react';
+import Contacts from 'pages/Contacts/Contacts';
+import AppBar from './AppBar/AppBar';
+import Home from 'pages/Home/Home';
+import SignIn from 'pages/SignIn/SignIn';
+import SignUp from 'pages/SignUp/SignUp';
 
 export default function App() {
-  const dispatch = useDispatch();
-  const isLoading = useSelector(selectIsLoading);
-  const error = useSelector(selectError);
-
-  useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
-
   return (
     <>
-      <Section title="Phonebook">
-        <Form />
-      </Section>
-      {isLoading && !error && (
-        <b style={{ display: 'block', color: 'white', padding: '25px 50px' }}>
-          Request in progress...
-        </b>
-      )}
-      {!isLoading && !error && (
-        <Section title="Contacts">
-          <Contacts />
-        </Section>
-      )}
+      <AppBar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="contacts" element={<Contacts />} />
+        <Route path="signin" element={<SignIn />} />
+        <Route path="signup" element={<SignUp />} />
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
     </>
   );
 }

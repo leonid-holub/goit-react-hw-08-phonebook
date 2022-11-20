@@ -13,7 +13,6 @@ const phonebookOptions = {
   title:
     "Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan",
   required: '',
-  autoComplete: 'off',
 };
 
 const contactsOptions = {
@@ -22,7 +21,6 @@ const contactsOptions = {
   title:
     'Phone number must be digits and can contain spaces, dashes, parentheses and can start with +',
   required: '',
-  autoComplete: 'off',
 };
 
 export default function Form() {
@@ -62,7 +60,7 @@ export default function Form() {
   };
 
   return (
-    <form onSubmit={submitChange}>
+    <form onSubmit={submitChange} autoComplete="off">
       <Label labelName="Name">
         <input
           className={css.input}

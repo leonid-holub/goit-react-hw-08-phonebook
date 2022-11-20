@@ -1,11 +1,11 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { update } from 'redux/filterSlice';
 import Contact from './Contact/Contact';
-import Label from 'components/Form/Label/Label';
-import styles from '../Form/Label/Label.module.css';
+import Label from 'components/ContactsList/Form/Label/Label';
+import styles from './Form/Label/Label.module.css';
 import { visibleContacts } from 'redux/selectors';
 
-const Contacts = () => {
+const ContactsList = () => {
   const dispatch = useDispatch();
 
   const contactsArray = useSelector(visibleContacts);
@@ -38,4 +38,4 @@ const Contacts = () => {
   );
 };
 
-export default Contacts;
+export default ContactsList;
