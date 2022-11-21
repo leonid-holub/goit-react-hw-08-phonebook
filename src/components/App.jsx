@@ -3,7 +3,6 @@ import { useDispatch } from 'react-redux';
 import { lazy, Suspense } from 'react';
 import { useEffect } from 'react';
 import AppBar from './AppBar/AppBar';
-import Home from 'pages/Home/Home';
 import Loader from './Loader/Loader';
 import { fetchCurrentUser } from 'redux/auth/auth-operations';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
@@ -19,6 +18,7 @@ export default function App() {
   const Contacts = lazy(() => import('pages/Contacts/Contacts'));
   const SignIn = lazy(() => import('pages/SignIn/SignIn'));
   const SignUp = lazy(() => import('pages/SignUp/SignUp'));
+  const Home = lazy(() => import('pages/Home/Home'));
 
   return (
     <>
