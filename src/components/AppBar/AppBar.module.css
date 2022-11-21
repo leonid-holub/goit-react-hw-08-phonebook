@@ -4,5 +4,33 @@
 
 .nav {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  border: 1px solid rgba(242, 201, 119, 1);
+  border-radius: 5px;
+  min-height: 75px;
+  padding: 0 15px;
+}
+
+.link {
+  text-decoration: none;
+  font-style: inherit;
+  color: rgba(242, 201, 119, 1);
+  font-size: 30px;
+  display: block;
+  width: calc(100% / 3);
+}
+
+.navlink {
+  text-decoration: none;
+  text-align: center;
+  font-style: inherit;
+  color: #b7b5a3;
+  font-size: 24px;
+  font-weight: 600;
+  display: block;
+  width: calc(100% / 3);
+}
+
+.navlink:hover {
+  color: #ffffff;
 }

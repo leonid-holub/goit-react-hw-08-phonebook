@@ -1,28 +1,22 @@
-.contacts__item {
+.item {
+  list-style: none;
   display: flex;
-  flex-wrap: wrap;
-  min-width: 800px;
-  gap: 15px;
+  gap: 20px;
+  margin-bottom: 20px;
   align-items: center;
   font-size: 18px;
   font-weight: 600;
-  margin-bottom: 20px;
 }
 
-.contacts__item::before {
+.paragraph {
+  width: 275px;
+}
+
+.item::before {
   content: '';
   display: block;
   width: 8px;
   height: 8px;
   border: 4px solid rgba(242, 201, 119, 1);
   border-radius: 50%;
-}
-
-.paragraph {
-  width: 500px;
-}
-
-.buttons {
-  display: flex;
-  gap: 25px;
 }

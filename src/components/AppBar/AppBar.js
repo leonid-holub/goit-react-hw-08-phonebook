@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import AuthNav from './AuthNav/AuthNav';
 import UserMenu from './UserMenu/UserMenu';
@@ -11,8 +11,16 @@ export default function AppBar() {
   return (
     <header className={css.header}>
       <nav className={css.nav}>
-        <NavLink to="/">PNG</NavLink>
-        <AuthNav />
+        <Link to="/" className={css.link}>
+          M|C
+        </Link>
+        {isLoggedIn ? (
+          <NavLink to="contacts" className={css.navlink}>
+            Contacts
+          </NavLink>
+        ) : (
+          <AuthNav />
+        )}
         {isLoggedIn ? <UserMenu /> : ''}
       </nav>
     </header>

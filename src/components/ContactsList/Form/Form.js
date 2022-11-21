@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/operations';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { selectContacts } from 'redux/selectors';
 import Label from './Label/Label';
 import Button from './Button/Button';
@@ -50,12 +51,14 @@ export default function Form() {
       setName('');
       setNumber('');
     } else if (name && !number) {
-      alert('Please enter the number');
+      Notify.warning('Please enter the number', { position: 'center-top' });
     } else if (!name && number) {
-      alert('Please enter the name');
+      Notify.warning('Please enter the name', { position: 'center-top' });
     }
     if (allContacts.find(info => info.name === name)) {
-      alert(`${name} is already in contacts`);
+      Notify.warning(`${name} is already in contacts`, {
+        position: 'center-top',
+      });
     }
   };
 

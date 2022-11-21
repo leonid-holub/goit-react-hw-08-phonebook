@@ -4,6 +4,7 @@ import Contact from './Contact/Contact';
 import Label from 'components/ContactsList/Form/Label/Label';
 import styles from './Form/Label/Label.module.css';
 import { visibleContacts } from 'redux/selectors';
+import css from './ContactsList.module.css';
 
 const ContactsList = () => {
   const dispatch = useDispatch();
@@ -24,7 +25,7 @@ const ContactsList = () => {
           onChange={handleChange}
         ></input>
       </Label>
-      <ul>
+      <ul className={css.list}>
         {contactsArray.map(contact => (
           <Contact
             key={contact.id}

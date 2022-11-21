@@ -1,0 +1,13 @@
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: calc(100% / 3);
+  font-weight: 600;
+  font-size: 18px;
+  color: #b7b5a3;
+  justify-content: flex-end;
+}
+
+.paragraph {
+}

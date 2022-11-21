@@ -1,0 +1,18 @@
+.authorization {
+  margin-left: auto;
+  display: flex;
+  gap: 35px;
+}
+
+.navlink {
+  text-decoration: none;
+  font-style: inherit;
+  color: #b7b5a3;
+  font-size: 24px;
+  font-weight: 600;
+  display: block;
+}
+
+.navlink:hover {
+  color: #ffffff;
+}

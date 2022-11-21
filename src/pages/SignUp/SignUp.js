@@ -1,10 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import Section from 'components/Section/Section';
 import Label from 'components/ContactsList/Form/Label/Label';
 import css from '../../components/ContactsList/Form/Form.module.css';
 import Button from 'components/ContactsList/Form/Button/Button';
 import { register } from 'redux/auth/auth-operations';
+import styles from './SignUp.module.css';
 
 export default function SignUp() {
   const [userName, setUserName] = useState('');
@@ -38,7 +40,7 @@ export default function SignUp() {
 
   return (
     <Section title="Sign Up">
-      <form onSubmit={handleSubmit} autoComplete="off">
+      <form onSubmit={handleSubmit} autoComplete="off" className={styles.form}>
         <Label labelName={'User Name'}>
           <input
             type="text"
@@ -68,6 +70,9 @@ export default function SignUp() {
         </Label>
         <Button type="submit" textContent="Sign Up" />
       </form>
+      <Link to="/signin" className={styles.link}>
+        <p>Click here to Sign In</p>
+      </Link>
     </Section>
   );
 }

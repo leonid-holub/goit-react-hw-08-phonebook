@@ -2,9 +2,11 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import Section from 'components/Section/Section';
 import Label from 'components/ContactsList/Form/Label/Label';
+import { Link } from 'react-router-dom';
 import { logIn } from 'redux/auth/auth-operations';
 import Button from 'components/ContactsList/Form/Button/Button';
 import css from '../../components/ContactsList/Form/Form.module.css';
+import styles from './SignIn.module.css';
 
 export default function SignIn() {
   const [email, setEmail] = useState('');
@@ -33,7 +35,7 @@ export default function SignIn() {
 
   return (
     <Section title="Sign In">
-      <form autoComplete="off" onSubmit={handleSubmit}>
+      <form autoComplete="off" onSubmit={handleSubmit} className={styles.form}>
         <Label labelName={'Email'}>
           <input
             type="email"
@@ -54,6 +56,9 @@ export default function SignIn() {
         </Label>
         <Button type="submit" textContent="Sign In" />
       </form>
+      <Link to="/signup" className={styles.link}>
+        <p>Click here to Sign Up</p>
+      </Link>
     </Section>
   );
 }
